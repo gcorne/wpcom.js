@@ -4,13 +4,13 @@
  */
 
 var express = require('express');
-var WPCONN = require('../');
+var WPCONN = require('../../');
 
 /**
  * wpcon app data
  */
 
-var wpapp = require('../test/data');
+var wpapp = require('../../test/data');
 
 /**
  * Create a WPCONN instance
@@ -18,10 +18,10 @@ var wpapp = require('../test/data');
 
 var wpconn = WPCONN(wpapp.token);
 
-// setup middleware
-
+var pub = __dirname + '/public';
 var app = express();
 
+app.use(express.static(pub));
 app.set('views', __dirname + '/');
 app.set('view engine', 'jade');
 

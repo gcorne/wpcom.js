@@ -19,5 +19,6 @@ test:
 build:
 	@echo $(BRSFY)
 	@$(BRSFY) main.js -o dist/bundle.js
+	cp dist/bundle.js example/browser/public/wordpress.js
 
 .PHONY: test

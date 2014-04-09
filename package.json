@@ -15,6 +15,7 @@
     "superagent": "0.17.0"
   },
   "devDependencies": {
+    "browserify": "3.33.0",
     "mocha": "*",
     "should": "*"
   }

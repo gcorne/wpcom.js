@@ -29,6 +29,12 @@ function WPCONN(token){
 }
 
 /**
+ * Expose util tools
+ */
+
+WPCONN.util = require('./lib/util');
+
+/**
  * Expose `WPCONN` module
  */
 

@@ -1,0 +1,23 @@
+
+body {
+  font: 14px "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+  padding: 50px 80px;
+  margin: 0;
+}
+
+h1 {
+  color: #a04;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+table {
+  border-spacing: 0;
+}
+
+table tr td {
+  padding: 5px 15px;
+  border-bottom: 2px solid white
+}

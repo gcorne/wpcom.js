@@ -65,9 +65,23 @@ then can use [node-wpcom-oauth](https://github.com/Automattic/node-wpcom-oauth) 
 * **#site.post.edit(id, data, fn)** Edit a post
 * **#site.post.del(id, fn)** Delete a post
 
-## Example
+## Run in a browser
 
-Into `example/` folder download the npm dependencies:
+Compile the bundle using browserify. There is a make `build` rule for that:
+
+```cli
+$ make build
+```
+
+A `build.js` file is compiled into `dist/` folder and ready to use client-side in a browser like below:
+
+```html
+  <script type="text/javascript" src="/wpcom.js"></script>
+```
+
+## Basic example
+
+Into `example/basic` folder download the npm dependencies:
 
 ```cli
 $ npm install

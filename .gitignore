@@ -3,4 +3,5 @@ node_modules
 dist
 test/data.json
 npm-debug.log
-example/browser/public/wordpress.js
+
+example/browser/public/wpcom.js

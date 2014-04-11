@@ -17,8 +17,9 @@ test:
 		--reporter spec
 
 build:
-	@echo $(BRSFY)
-	@$(BRSFY) main.js -o dist/bundle.js
-	cp dist/bundle.js example/browser/public/wordpress.js
+	@$(BRSFY) main.js -o dist/wpcom.js
+
+bundle: build
+	cp dist/bundle.js example/browser/public/wpcom.js
 
 .PHONY: test

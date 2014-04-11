@@ -20,7 +20,8 @@ build:
 	mkdir -p dist
 	@$(BRSFY) main.js -o dist/wpcom.js
 
-bundle: build
-	cp dist/bundle.js example/browser/public/wpcom.js
+example: build
+	cp dist/wpcom.js example/browser/public/wpcom.js
+	cd example/browser; npm install; $(NODE) index.js
 
 .PHONY: test

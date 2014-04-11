@@ -17,6 +17,7 @@ test:
 		--reporter spec
 
 build:
+	mkdir -p dist
 	@$(BRSFY) main.js -o dist/wpcom.js
 
 bundle: build

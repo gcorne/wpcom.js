@@ -73,7 +73,7 @@ Compile the bundle using browserify. There is a make `build` rule for that:
 $ make build
 ```
 
-A `build.js` file is compiled into `dist/` folder and ready to use client-side in a browser like below:
+A `build.js` file is compiled into `dist/` folder and ready to use client-side in a browser:
 
 ```html
   <script type="text/javascript" src="/wpcom.js"></script>

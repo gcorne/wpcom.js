@@ -40,6 +40,7 @@ function WPCOM(token){
  */
 
 WPCOM.util = require('./lib/util');
+
  /**
  * Inherit from Emitter
  */

@@ -18,13 +18,13 @@ req
     wp = WPCONN(data.token);
 
     // set site id
-    wp.site.id(data.site);
+    var site = wp.site(data.site);
 
-    wp.site.info({}, function(err, info){
+    site.get(function(err, data){
       if (err) {
         return console.log(err);
       }
-      console.log('-> info -> ', info);
+
     });
   }
 });

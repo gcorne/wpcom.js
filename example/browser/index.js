@@ -30,7 +30,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/data', function(req, res){
-  res.send({ token: wpconn.tkn, site: wpapp.public_site });
+  res.send({ token: wpconn.tkn, site: wpapp.site.public.url });
 });
 
 app.listen(3000);

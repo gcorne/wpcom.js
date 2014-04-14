@@ -18,34 +18,29 @@ var test = require('./data');
  * Create a `Site` instance
  */
 
-describe('site', function(){
+describe('WPCOM#Site', function(){
 
   describe('sync', function(){
 
-    it('should be an instance of `Site`', function(){
-      var wpcom = WPCOM();
-      wpcom.site.should.be.an.instanceOf(Site);
-    });
+    it('should be create a site object instance', function(){
+      var site = util.public_site();
 
-    it('should be set site identifier', function(){
-      var wpcom = WPCOM();
-      wpcom.site.id(test.public_site);
-      wpcom.site._id
-        .should.be.eql(test.public_site);
+      site
+        .should.be.an.instanceOf(Site);
+
+      site._id
+        .should.be.eql(test.site.public.url);
     });
 
   });
 
   describe('async', function(){
 
-    describe('info', function(){
+    describe('get', function(){
       it('should require site data', function(done){
-        var wpcom = WPCOM();
-        var site = wpcom.site;
+        var site = util.public_site();
 
-        site.id(test.public_site);
-
-        site.info(function(err, info){
+        site.get(function(err, info){
           if (err) throw err;
 
           // check site info
@@ -62,9 +57,9 @@ describe('site', function(){
     describe('posts', function(){
 
       it('should request posts list', function(done){
-        var wpcom = util.public_site();
+        var site = util.public_site();
 
-        wpcom.site.posts(function(err, list){
+        site.posts(function(err, list){
           if (err) throw err;
 
           // list object data testing
@@ -83,9 +78,10 @@ describe('site', function(){
       });
 
       it('should request only one post', function(done){
-        var wpcom = util.public_site();
 
-        wpcom.site.posts({ number: 1 }, function(err, list){
+        var site = util.public_site();
+
+        site.posts({ number: 1 }, function(err, list){
           if (err) throw err;
 
           // list object data testing
@@ -103,6 +99,27 @@ describe('site', function(){
 
           done();
         });
+
+      });
+
+      it('should create a new blog post', function(done){
+
+        var site = util.private_site();
+
+        var post = site.addPost(test.new_post_data, function(err, data){
+          if (err) throw err;
+
+          // data object data testing
+          data
+            .should.be.an.instanceOf(Object);
+
+          // `post.site_Id`
+          data.site_ID
+            .should.be.eql(test.site.private.id);
+
+          done();
+        });
+
       });
     });
   });

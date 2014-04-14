@@ -19,20 +19,19 @@ function Util(){}
  */
 
 Util.wpcom = function(){
-  return WPCOM(test.token);
+  return WPCOM(test.token.global);
 };
 
 /**
  * Create a new WPCOM instance
- * setting with a public site id
+ * Create a site instance object
  *
  * @api public
  */
 
 Util.public_site = function(){
-  var wpcom = WPCOM(test.token);
-  wpcom.site.id(test.public_site);
-  return wpcom;
+  var wpcom = WPCOM(test.token.global);
+  return wpcom.site(test.site.public.url);
 };
 
 /**
@@ -43,9 +42,8 @@ Util.public_site = function(){
  */
 
 Util.private_site = function(){
-  var wpcom = WPCOM(test.token);
-  wpcom.site.id(test.private_site);
-  return wpcom;
+  var wpcom = WPCOM(test.token.private);
+  return wpcom.site(test.site.private.url);
 };
 
 /**

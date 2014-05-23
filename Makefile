@@ -41,9 +41,8 @@ test:
 	@$(MOCHA) \
 		--timeout 10s \
 		--slow 3s \
-		--grep "$(filter-out $@,$(MAKECMDGOALS))" \
 		--bail \
-		--reporter spec
+		--reporter dot
 
 test-all:
 	@$(MOCHA) \

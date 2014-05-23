@@ -11,10 +11,11 @@
   "main": "wpcom+xhr.js",
   "dependencies": {
     "debug": "0.8.0",
-    "wpcom-xhr-request": "0.2.0",
-    "inherits": "2.0.1"
+    "inherits": "2.0.1",
+    "wpcom-xhr-request": "0.2.0"
   },
   "devDependencies": {
+    "zuul": "1.6.5",
     "browserify": "3.44.0",
     "mocha": "1.18.2"
   }

@@ -22,8 +22,8 @@ clean:
 dist:
 	@mkdir -p $@
 
-dist/wpcom.js: node_modules index.js wpcom+xhr.js dist lib/*
-	@$(BROWSERIFY) -s WPCOM wpcom+xhr.js > $@
+dist/wpcom.js: node_modules index.js dist lib/*
+	@$(BROWSERIFY) -s WPCOM index.js > $@
 
 node_modules: package.json
 	@NODE_ENV= $(NPM) install

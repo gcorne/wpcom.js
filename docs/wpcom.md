@@ -27,6 +27,16 @@ var wpcom = require('wpcom')('<your-token>');
 var site = wpcom.site();
 ```
 
+### WPCOM#token([String token])
+
+Passes the token after `WPCOM` has been initialized.
+
+```js
+var wpcom = require('wpcom')();
+wpcom.token('<my-token>');
+wpcom.token(); // returns <my-token>
+```
+
 ### WPCOM#freshlyPressed([params, ]fn)
 
 View Freshly Pressed posts from the WordPress.com homepage.

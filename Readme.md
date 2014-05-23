@@ -1,7 +1,7 @@
+
 # wpcom.js
 
-  [WordPress.com][] JavaScript API client designed for Node.JS and
-  browsers.
+[WordPress.com][] JavaScript API client. Node.JS and browser compatible.
 
 ## How to use
 
@@ -41,49 +41,26 @@ Include `dist/wpcom.js` in a `<script>` tag:
 
 [Examples](./examples/Readme.md) doc page
 
-## Test
+## Tests
 
-Create `data.json` file into `test/` folder to can run the tests. You can copy
-or rename the `test/data_example.json` file.
+Our tests are designed to run on all the environments we support:
+- Node.JS: executed with the [mocha](https://github.com/visionmedia/mocha) CLI
+- Browsers: transported by [zuul](https://github.com/defunctzombie/zuul) and
+run on Sauce Labs.
 
-```json
-{
-  "token": {
-    "global": "<global token>"
-  },
-
-  "site": {
-    "public": {
-      "url": "<public blog url>"
-    },
-    "private" : {
-      "url": "<private blog url>",
-      "id": "<private blog id>",
-      "private": "<token>"
-    }
-  },
-
-  "new_post_data": {
-    "title": "New testing post",
-    "content": "<div style=\"color: red;\">The content of the new testing post</div>"
-  }
-}
-```
-
-... and then
+To run them, first clone the repository:
 
 ```bash
-$ make test-all
+$ git clone https://github.com/Automattic/wpcom.js.git
 ```
 
-You use `make test` and pass a first argument to filter tests in the test rule
+Make sure you have your `~/.zuulrc` credentials
+[configured](https://github.com/defunctzombie/zuul/wiki/Cloud-testing#2-educate-zuul)
+and then run:
 
 ```bash
-$make test site.addPost()
+$ make test
 ```
-
-**Note**: Don't add `http://` in `public_site` and `private_site` values.
-
 
 ## License
 
@@ -93,3 +70,4 @@ MIT – Copyright 2014 Automattic
 [REST API]: http://developer.wordpress.com/docs/api
 [WordPress.com]: http://www.wordpress.com
 [node-wpcom-oauth]: https://github.com/Automattic/node-wpcom-oauth
+

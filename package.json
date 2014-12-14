@@ -4,10 +4,14 @@
   "description": "A simple webpage of wpcom.js",
   "main": "index.js",
   "dependencies": {
+    "domready": "^1.0.7",
+    "debug": "^2.1.0",
+    "wpcom": "^3.1.1"
   },
   "devDependencies": {
     "stylus": "^0.49.3",
-    "jade": "^1.8.1"
+    "jade": "^1.8.1",
+    "browserify": "^7.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

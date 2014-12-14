@@ -52,7 +52,7 @@ body
 
 #wrapper
   font-family "Open Sans", sans-serif
-  min-height 100vh
+  height 100%
 
 a
   text-decoration none
@@ -110,22 +110,13 @@ button
   opacity 1
   top 0
 
-.editor-outer
-  position absolute
-  bottom -60px
-  width 100%
-
 .editor-inner
-  margin 0 20px
+  margin 30px 20px 0
   background-color #2b303b
-  min-height 300px
   overflow-x hidden
   overflow-y scroll
-  border-radius 3px 3px 0px 0px
   text-align left
-  min-height 440px
-  .editor-block
-    height 200px
+  border-radius 3px
 
 /**
  * Gist code
@@ -183,15 +174,13 @@ button
 
 #footer
   height 70px
+  margin-top: -70px
   background-color white
   font-family "Open Sans", sans-serif
-  position absolute
+  position static
   width 100%
   bottom 0
-  bottom 0
-  position relative
-  bottom 0
-  position absolute
+  z-index 100
   a
     margin-top 10px
     display block
@@ -222,6 +211,12 @@ button
   letter-spacing 0.5px
   top 12px
   position relative
+  
+/**
+ * Footer position
+ */
+ html, body
+   height 100%
 
 // web small
 @media screen and (max-width: 700px), screen and (max-height: 700px)
@@ -270,10 +265,6 @@ button
 
 //tablet portrait
 @media screen and (min-device-width: 768px) and (orientation : portrait)
-  #wrapper
-    min-height: 400px
-  .editor-inner
-    min-height: 440px
   #footer
     bottom: 0
-    position: absolute
+    position: static

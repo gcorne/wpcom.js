@@ -23,6 +23,10 @@ init:
 	npm install
 	make build
 
+site:
+	git add site/ -v
+	git commit -m "site: updated"
+
 gh:
 	make build
 	mkdir -p gh-tmp
@@ -36,4 +40,4 @@ gh:
 	git checkout stage
 	rm -rf gh-tmp
 
-.PHONY: build init
+.PHONY: build init site

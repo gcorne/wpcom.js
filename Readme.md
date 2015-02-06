@@ -5,7 +5,7 @@ wpcom.js pre production
 
 ### Edit
 
-Modify app editing `index.jade`, `style.styl` and `app.js` sources files.
+Modify the application editing `index.jade`, `style.styl` and `app.js` sources files.
 
 ### Compile
 

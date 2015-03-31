@@ -1,2 +1,4 @@
 node_modules
 gh-tmp/
+test/fixture.json
+.DS_Store
